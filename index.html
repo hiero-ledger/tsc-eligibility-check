@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="LF Decentralized Trust TAC Eligibility Check">
+		<title>LF Decentralized Trust TAC Eligibility Check</title>
+		<link rel="stylesheet" href="/pure-min.css">
+		<link rel="stylesheet" href="/grids-responsive-min.css">
+		<link rel="stylesheet" href="/font-awesome.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div class="splash-container">
+			<div class="splash">
+				<h1 style="text-align: center;">
+					<img src="hf-logo.png" width="300" height"58" alt="">
+				</h1>
+				<p class="splash-subhead">
+				Check your GitHub ID to confirm<br>your eligibility:
+				</p>
+				<form id="frm">
+					<input id="githubID" type="text" name="githubID" onkeypress="handle(event)">
+					<input type="button" onclick="check()" value="Check">
+				</form>
+<a href="https://wiki.hyperledger.org/display/TSC/TAC+Election+2023">If you do not have a GitHub ID, please follow these directions on the wiki.</a>
+				<p class="splash-subhead" id="results"></p>
+Hashes updated
+Mon Oct 16 07:48:10 PDT 2023
+			</div>
+		</div>
+	</body>
+	<script src="md5.js"></script>
+	<script src="hashes.js"></script>
+	<script>
+		function check() {
+			let githubID = document.getElementById("githubID").value.trim().toLowerCase();
+			console.log(githubID);
+			let hash = md5(githubID);
+			console.log(hash);
+			let [eligibleToVote, eligibleToRun] = Hashes.check(hash);
+			if (eligibleToVote && eligibleToRun) {
+				document.getElementById("results").innerHTML = "You are eligible to vote.<br>You are eligible to run."
+			} else if (eligibleToVote) {
+				document.getElementById("results").innerHTML = "You are eligible to vote."
+			} else if (eligibleToRun) {
+				document.getElementById("results").innerHTML = "You are eligible to run."
+			} else {
+				document.getElementById("results").innerHTML = 'You are not eligible to vote nor run.<br>If you think this is an error, please email <a href="mailto:election@lists.hyperledger.org?subject=TAC Eligibility&body=My name:%0D%0AMy GitHub ID%0D%0AI believe I should be eligible to vote because...%0D%0AI believe I should eligible to run because...">the election staff.</a>'
+			}
+		}
+
+		function handle(e) {
+			if(e.keyCode === 13) {
+				e.preventDefault();
+				check();
+			}
+		}
+	</script>
+</html>

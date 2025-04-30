@@ -4,7 +4,7 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="LF Decentralized Trust TAC Eligibility Check">
-		<title>LF Decentralized Trust TAC Eligibility Check</title>
+		<title>Hiero TSC Eligibility Check</title>
 		<link rel="stylesheet" href="/pure-min.css">
 		<link rel="stylesheet" href="/grids-responsive-min.css">
 		<link rel="stylesheet" href="/font-awesome.css">
@@ -24,8 +24,10 @@
 					<input type="button" onclick="check()" value="Check">
 				</form>
 				<p class="splash-subhead" id="results"></p>
-Hashes updated
-Thu Oct 17 19:57:51 UTC 2024
+Hashes updated:
+Wed Apr 30 03:02:00 PM PDT 2025
+Number of eligible voters:
+To be announced ...
 			</div>
 		</div>
 	</body>
@@ -45,7 +47,7 @@ Thu Oct 17 19:57:51 UTC 2024
 			} else if (eligibleToRun) {
 				document.getElementById("results").innerHTML = "You are eligible to run."
 			} else {
-				document.getElementById("results").innerHTML = 'You are not eligible to vote nor run.<br>If you think this is an error, please email <a href="mailto:election@lists.hyperledger.org?subject=TAC Eligibility&body=My name:%0D%0AMy GitHub ID%0D%0AI believe I should be eligible to vote because...%0D%0AI believe I should eligible to run because...">the election staff.</a>'
+				document.getElementById("results").innerHTML = 'You are not eligible to vote nor run.<br>If you think this is an error, please email <a href="mailto:hiero@lists.lfdecentralizedtrust.org?subject=TSC Eligibility&body=My name:%0D%0AMy GitHub ID%0D%0AI believe I should be eligible to vote because...%0D%0AI believe I should eligible to run because...">the election staff.</a>'
 			}
 		}
 

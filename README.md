@@ -6,6 +6,7 @@ For an example on how to add these links and format them, use: https://github.co
 Having this accessible can help reducing time looking for these sites.
 -->
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/10697/badge)](https://bestpractices.coreinfrastructure.org/projects/10697)
+[![License](https://img.shields.io/badge/license-apache2-blue.svg)](LICENSE)
 <!---
 Releases link can be oomitted for non-code repos
 -->
